@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar/Sidebar"
 import { dashboardRouteList } from "./hooks/useRoute"
 import "./App.css"
 import { Login, Register } from "./pages/Login"
+import SideRight from "./components/SideRight/SideRight"
 
 function App() {
   const { token } = useContext(Context)
@@ -13,7 +14,7 @@ function App() {
     return (
       <div className="flex min-h-screen bg-white">
         <Sidebar />
-        <main className="flex-1">
+        <main className="flex-1 border-l border-r">
           <Routes>
             {dashboardRouteList.map((route) => (
               <Route key={route.id} path={route.path} element={route.element}>
@@ -24,6 +25,7 @@ function App() {
             ))}
           </Routes>
         </main>
+        <SideRight/>
       </div>
     )
   } else {
@@ -38,4 +40,3 @@ function App() {
 }
 
 export default App
-

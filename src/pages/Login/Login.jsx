@@ -7,7 +7,7 @@ import Loading from "../../assets/images/loading.png"
 import {Context} from "../../context/Context"
 import toast, { Toaster } from 'react-hot-toast'
 
-const Login = () => {
+export default function Login() {
   const [isLoading, setIsLoading] = useState(false)
   const {users, setToken} = useContext(Context)
   function handleSubmit(e){
@@ -53,4 +53,3 @@ const Login = () => {
   )
 }
 
-export default Login
